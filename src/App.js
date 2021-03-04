@@ -3,11 +3,11 @@ import './App.css';
 
 //component imports
 import Form from './components/Form';
-import ToDo from './components/ToDoList'
+import ToDoList from './components/ToDoList'
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const [todos, setToDos] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
   return (
     <div className="App">
@@ -15,8 +15,13 @@ function App() {
       <header>
         <h1>Fight Boredom!</h1>
       </header>
-      <Form  inputText={inputText} todos={todos} setToDos={setToDos} setInputText={setInputText} />
-      <ToDo inputText={inputText} />
+      <Form
+        inputText={inputText}
+        todos={toDos}
+        setToDos={setToDos}
+        setInputText={setInputText}
+      />
+      <ToDoList toDos={toDos} />
     </div>
   );
 }
